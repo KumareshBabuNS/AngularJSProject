@@ -30,7 +30,9 @@
 
 		this.addReview = function(product){
 			product.reviews.push(this.review);
-
+			 
+			/*Clear out the live preview and reset the form */
+			this.review = {};
 		};
 	});
 

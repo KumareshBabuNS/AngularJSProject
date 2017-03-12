@@ -14,9 +14,9 @@
  <div class="list-group">
 
 <div class="list-group-item" ng-hide="product.soldOut" ng-repeat="product in store.products| orderBy: '-price' ">
-<h1> {{product.name}}</h1>
-<h2> <em class="pull-right"> {{product.price | currency}}</em>
-</h2>
+<h3> {{product.name}}</h3>
+<h3> <em class="pull-right"> {{product.price | currency}}</em>
+</h3>
 <!-- <div class="gallery">
 
 <img ng-src="{{product.images[0].full}}" />
