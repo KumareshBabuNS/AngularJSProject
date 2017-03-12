@@ -8,7 +8,7 @@
 
 <body ng-controller="StoreController as store">
 
-<h1 class="jumbotron"> Angular Game</h1>
+<h1 class="jumbotron"> Welcome to the Gem Store</h1>
 
 
  <div class="list-group">
@@ -24,12 +24,12 @@
 </div> -->
 
 <div class="gallery">
-        <div class="img-wrap">
-          <img ng-src="{{product.images[0].full}}" />
+        <div class="img-wrap" ng-repeat="image1 in product.images">
+          <img ng-src="{{image1.full}}" class="pull-left"/>
         </div>
-        <ul class="img-thumbnails clearfix">
-          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-            <img ng-src="{{image.thumb}}" />
+        <ul class="img-thumbnails clearfix" style="clear: both;">
+          <li class="small-image pull-left thumbnail" ng-repeat="image2 in product.images">
+            <img ng-src="{{image2.thumb}}" />
           </li>
         </ul>
       </div>

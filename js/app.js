@@ -47,6 +47,25 @@
 					}
 
 
+			],
+			reviews: [
+					{
+
+						stars: 5,
+						body: 'I love the product',
+						author: 'joe@gmail.com'
+					},
+					{
+						stars: 3,
+						body: 'Not that good',
+						author: 'jane@gmail.com'
+
+					}
+
+
+
+
+
 			]
 
 
@@ -72,6 +91,25 @@
 						thumb: 'img/pentago-02-thumb.jpg'
 
 					}
+
+
+			],
+			reviews: [
+					{
+
+						stars: 5,
+						body: 'I love the product',
+						author: 'joe@gmail.com'
+					},
+					{
+						stars: 3,
+						body: 'Not that good',
+						author: 'jane@gmail.com'
+
+					}
+
+
+
 
 
 			]
