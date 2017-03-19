@@ -40,6 +40,28 @@
 		};
 	}]);
 
+	app.directive('productTitle', function(){
+
+		return {
+
+			restrict: 'E',
+			templateUrl: 'product-title.html'
+
+		};
+
+	});
+
+	app.directive('productSpecification', function(){
+
+			return{
+
+				restrict:'A',
+				templateUrl:'product-specification.html'
+
+			};
+
+	});
+
 
 	var gems = [{
 
@@ -63,6 +85,15 @@
 
 
 			],
+			specification: {
+
+						heightDimension: '0.43',
+						widthDimension:'0.31'
+
+
+
+
+			},
 			reviews: [
 					{
 
@@ -109,6 +140,15 @@
 
 
 			],
+			specification: {
+
+						heightDimension: '0.73',
+						widthDimension:'0.87'
+
+
+
+
+			},
 			reviews: [
 					{
 

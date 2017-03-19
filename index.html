@@ -27,7 +27,14 @@
  <div class="list-group">
 
 <div class="list-group-item" ng-hide="product.soldOut" ng-repeat="product in store.products| orderBy: '-price' ">
-<h3 ng-include="'product-title.html'"> 
+<h3> 
+
+<!--
+commenting the ng include tag to create a custom directive
+ <h3 ng-include="'product-title.html'" > 
+-->
+<product-title></product-title>
+
 </h3>
 <!-- <div class="gallery">
 
@@ -66,11 +73,8 @@
 <p> {{product.description}}</p>
 </div>
 
-<div class="panel" ng-show="panel.isSelected(2)">
-<h4>Specification</h4>
-<blockquote>
-	None yet
-</blockquote>
+<div class="panel" ng-show="panel.isSelected(2)" product-specification>
+
 </div>
 <div class="panel" ng-show="panel.isSelected(3)">
 <h4>Reviews</h4>
