@@ -4,6 +4,19 @@
 	<title>My App</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
+	<style type="text/css" media="screen">
+	.ng-invalid .ng-dirty{
+
+		border-color: #FA787E;
+	}
+	.ng-valid .ng-dirty{
+		border-color: #78FA89;
+	}
+
+
+	</style>
+
+
 </head>
 
 <body ng-controller="StoreController as store">
@@ -14,8 +27,7 @@
  <div class="list-group">
 
 <div class="list-group-item" ng-hide="product.soldOut" ng-repeat="product in store.products| orderBy: '-price' ">
-<h3> {{product.name}}</h3>
-<h3> <em class="pull-right"> {{product.price | currency}}</em>
+<h3 ng-include="'product-title.html'"> 
 </h3>
 <!-- <div class="gallery">
 
@@ -65,10 +77,10 @@
 <blockquote ng-repeat="review in product.reviews">
 	<b>Stars : {{review.stars}}</b>
 	{{review.body}}
-	<cite>by: {{review.author}}</cite>	
+	<cite>by: {{review.author}} on {{review.createdOn | date}}</cite>	
 
 </blockquote>
-<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)">
  <!--  Live Preview -->
 <blockquote>
 	<b>Stars : {{reviewCtrl.review.stars}}</b>
@@ -88,6 +100,7 @@
 </select>
 
 </fieldset>
+
 
 <fieldset class="form-group">
 <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review" title="Review" required></textarea>

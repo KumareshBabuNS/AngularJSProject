@@ -25,16 +25,20 @@
 		};
 	});
 
-	app.controller('ReviewController', function(){
+	app.controller('ReviewController', ['$scope', function($scope){
 		this.review = {};
 
 		this.addReview = function(product){
+			this.review.createdOn = Date.now();
 			product.reviews.push(this.review);
 			 
+			 $scope.review.body = $scope.temp;
 			/*Clear out the live preview and reset the form */
 			this.review = {};
+
+
 		};
-	});
+	}]);
 
 
 	var gems = [{
